@@ -7,102 +7,36 @@ const DetailsScreen = ({ navigation, route }) => {
   const plant = route.params;
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: COLORS.white,
-      }}
-    >
+    <SafeAreaView style={style.wrapper}>
       <View style={style.header}>
         <Icon name="arrow-back" size={28} onPress={() => navigation.goBack()} />
         <Icon name="shopping-cart" size={28} />
       </View>
       <View style={style.imageContainer}>
-        <Image source={plant.img} style={{ resizeMode: "contain", flex: 1 }} />
+        <Image source={plant.img} style={style.image} />
       </View>
       <View style={style.detailsContainer}>
-        <View
-          style={{
-            marginLeft: 20,
-            flexDirection: "row",
-            alignItems: "flex-end",
-          }}
-        ></View>
-        <View
-          style={{
-            marginLeft: 20,
-            marginTop: 20,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Text style={{ fontSize: 22, fontWeight: "bold" }}>{plant.name}</Text>
+        <View style={style.priceContainer1}>
+          <Text style={style.text1}>{plant.name}</Text>
           <View style={style.priceTag}>
-            <Text
-              style={{
-                marginLeft: 10,
-                color: COLORS.white,
-                fontWeight: "bold",
-                fontSize: 16,
-              }}
-            >
-              ${plant.price}
-            </Text>
+            <Text style={style.plantPrice}>${plant.price}</Text>
           </View>
         </View>
-        <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
-          <Text style={{ fontSize: 20, fontWeight: "bold" }}>About</Text>
-          <Text
-            style={{
-              color: "grey",
-              fontSize: 16,
-              lineHeight: 22,
-              marginTop: 10,
-            }}
-          >
-            {plant.about}
-          </Text>
-          <View
-            style={{
-              marginTop: 20,
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
+        <View style={style.textContainer}>
+          <Text style={style.text2}>About</Text>
+          <Text style={style.text3}>{plant.about}</Text>
+          <View style={style.buyContainer}>
+            <View style={style.counterContainer}>
               <View style={style.borderBtn}>
                 <Text style={style.borderBtnText}>-</Text>
               </View>
-              <Text
-                style={{
-                  fontSize: 20,
-                  marginHorizontal: 10,
-                  fontWeight: "bold",
-                }}
-              >
-                1
-              </Text>
+              <Text style={style.counter}>1</Text>
               <View style={style.borderBtn}>
                 <Text style={style.borderBtnText}>+</Text>
               </View>
             </View>
-
             <View style={style.buyBtn}>
-              <Text
-                style={{
-                  color: COLORS.white,
-                  fontSize: 18,
-                  fontWeight: "bold",
-                }}
-              >
-                Buy
-              </Text>
+              <Text style={style.buttonText}>Buy</Text>
             </View>
           </View>
         </View>
@@ -112,6 +46,64 @@ const DetailsScreen = ({ navigation, route }) => {
 };
 
 const style = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    backgroundColor: COLORS.white,
+  },
+  image: {
+    resizeMode: "contain",
+    flex: 1,
+  },
+  priceContainer1: {
+    marginLeft: 20,
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  text1: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+  plantPrice: {
+    marginLeft: 10,
+    color: COLORS.white,
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  textContainer: {
+    paddingHorizontal: 20,
+    marginTop: 20,
+  },
+  text2: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  text3: {
+    color: "grey",
+    fontSize: 16,
+    lineHeight: 22,
+    marginTop: 20,
+  },
+  buyContainer: {
+    marginTop: 60,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  counterContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  counter: {
+    fontSize: 20,
+    marginHorizontal: 10,
+    fontWeight: "bold",
+  },
+  buttonText: {
+    fontSize: 20,
+    marginHorizontal: 10,
+    fontWeight: "bold",
+  },
   header: {
     paddingHorizontal: 20,
     marginTop: 20,
