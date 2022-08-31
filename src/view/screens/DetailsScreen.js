@@ -102,7 +102,6 @@ const style = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
   },
-
   text2: {
     fontSize: 20,
     fontWeight: "bold",
@@ -110,8 +109,6 @@ const style = StyleSheet.create({
   text3: {
     color: "grey",
     fontSize: 16,
-    lineHeight: 22,
-    marginTop: 20,
   },
   buyContainer: {
     marginTop: 60,
@@ -148,7 +145,7 @@ const style = StyleSheet.create({
     flex: 0.55,
     backgroundColor: COLORS.light,
     marginHorizontal: 7,
-    marginBottom: 35,
+    marginBottom: 15,
     borderRadius: 20,
     marginTop: 30,
     paddingTop: 30,
