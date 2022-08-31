@@ -15,12 +15,17 @@ const DetailsScreen = ({ navigation, route }) => {
   const plant = route.params;
 
   const handleIncrement = () => {
-    setCount(count + 1);
+    if (count <= 9) {
+      setCount(count + 1);
+    }
+    if (count === 9) {
+      alert("Max 10 prodcuts can be ordered!");
+    }
   };
 
   const handleDecrement = () => {
     if (count > 0) {
-    setCount(count - 1);
+      setCount(count - 1);
     }
   };
 
@@ -85,7 +90,7 @@ const style = StyleSheet.create({
   },
   textContainer: {
     paddingHorizontal: 20,
-    marginTop: 20,
+    marginTop: 10,
   },
   text1: {
     fontSize: 22,
@@ -143,7 +148,7 @@ const style = StyleSheet.create({
     flex: 0.55,
     backgroundColor: COLORS.light,
     marginHorizontal: 7,
-    marginBottom: 7,
+    marginBottom: 35,
     borderRadius: 20,
     marginTop: 30,
     paddingTop: 30,
