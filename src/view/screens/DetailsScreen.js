@@ -1,10 +1,28 @@
-import React from "react";
-import { View, SafeAreaView, Image, Text, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import {
+  View,
+  SafeAreaView,
+  Image,
+  Text,
+  StyleSheet,
+  Pressable,
+} from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import COLORS from "../../consts/colors";
 
 const DetailsScreen = ({ navigation, route }) => {
+  const [count, setCount] = useState(0);
   const plant = route.params;
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrement = () => {
+    if (count > 0) {
+    setCount(count - 1);
+    }
+  };
 
   return (
     <SafeAreaView style={style.wrapper}>
@@ -28,11 +46,15 @@ const DetailsScreen = ({ navigation, route }) => {
           <View style={style.buyContainer}>
             <View style={style.counterContainer}>
               <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>-</Text>
+                <Pressable onPressIn={handleDecrement}>
+                  <Text style={style.counter}>-</Text>
+                </Pressable>
               </View>
-              <Text style={style.counter}>1</Text>
+              <Text style={style.counter}>{count}</Text>
               <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>+</Text>
+                <Pressable onPressIn={handleIncrement}>
+                  <Text style={style.counter}>+</Text>
+                </Pressable>
               </View>
             </View>
             <View style={style.buyBtn}>
