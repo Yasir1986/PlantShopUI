@@ -61,13 +61,13 @@ const style = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  text1: {
-    fontSize: 22,
-    fontWeight: "bold",
-  },
   textContainer: {
     paddingHorizontal: 20,
     marginTop: 20,
+  },
+  text1: {
+    fontSize: 22,
+    fontWeight: "bold",
   },
   plantPrice: {
     marginLeft: 10,
