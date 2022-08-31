@@ -65,16 +65,17 @@ const style = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
   },
+  textContainer: {
+    paddingHorizontal: 20,
+    marginTop: 20,
+  },
   plantPrice: {
     marginLeft: 10,
     color: COLORS.white,
     fontWeight: "bold",
     fontSize: 16,
   },
-  textContainer: {
-    paddingHorizontal: 20,
-    marginTop: 20,
-  },
+
   text2: {
     fontSize: 20,
     fontWeight: "bold",
